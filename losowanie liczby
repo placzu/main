@@ -1,0 +1,23 @@
+import random
+
+losowa_liczba = str(random.randint(1, 1000))
+zgadywana_liczba = 0
+liczba_prob = 1
+print(losowa_liczba)
+print("Zagramy w giere, masz zgadnac liczbe ktora sobie wybiore od 1 do 1000")
+
+while losowa_liczba != zgadywana_liczba:
+    zgadywana_liczba = input("podaj liczbe jaka zgadujesz :")
+    liczba_prob + 1
+    if losowa_liczba == zgadywana_liczba:
+        break
+    elif losowa_liczba <= zgadywana_liczba:
+        print("mniej")
+    elif losowa_liczba >= zgadywana_liczba:
+        print("wiecej")
+
+
+
+
+
+print("Wygrales za", liczba_prob, "razem")
