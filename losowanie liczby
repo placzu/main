@@ -2,22 +2,36 @@ import random
 
 losowa_liczba = str(random.randint(1, 1000))
 zgadywana_liczba = 0
-liczba_prob = 1
+liczba_prob = 0
 print(losowa_liczba)
 print("Zagramy w giere, masz zgadnac liczbe ktora sobie wybiore od 1 do 1000")
 
 while losowa_liczba != zgadywana_liczba:
     zgadywana_liczba = input("podaj liczbe jaka zgadujesz :")
-    liczba_prob + 1
+    liczba_prob += 1
     if losowa_liczba == zgadywana_liczba:
         break
     elif losowa_liczba <= zgadywana_liczba:
         print("mniej")
     elif losowa_liczba >= zgadywana_liczba:
         print("wiecej")
-
-
-
-
-
 print("Wygrales za", liczba_prob, "razem")
+
+
+print("to teraz ja zgaduje wybierz sobie liczbe od 1 do 1000, jezeli sie pomyle to powiedz mi czy twoja liczba to wiecej,czy mniej.")
+
+losowa_liczba = (random.randint(1, 1000))
+print("zgaduje ", losowa_liczba)
+odpowiedz = (input("zgadlem? :"))
+
+if odpowiedz == "tak":
+    print("wygralem HaHa!")
+elif odpowiedz == "nie":
+    while True:
+        wiekszosc = input("wybrales liczbe wieksza czy mniejsza? :")
+        if wiekszosc == "wieksza":
+            losowa_liczba = random.randint(losowa_liczba, 1000)
+            print(losowa_liczba)
+        elif wiekszosc == "mniejsza":
+            losowa_liczba = random.randint(1, losowa_liczba)
+            print(losowa_liczba)
