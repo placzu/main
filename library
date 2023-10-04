@@ -9,19 +9,21 @@ while True:
     book_list.sort()
     number_rented_books = len(rented_books_list)
     number_of_books = len(book_list)
-    print("number of all books in liblary ", number_of_books)
-    print("books in rent now ", number_rented_books)
+#    print("number of all books in liblary ", number_of_books)
+#    print("books in rent now ", number_rented_books)
     print("add a new book = add")
     print("give a book back = back")
     print("rent a book = rent")
+    print("for delate = throw away")
+    print("for check rented book tape = rented books")
+    print("check number of all books in library = check")
+    print("for end print end")
     actione = input("tape number :")
-
 
     if actione == "add":
         new_book_name = input("first give me a book name :")
         book_list.append(new_book_name)
         print(book_list)
-
 
     elif actione == "back":
         while True:
@@ -35,7 +37,6 @@ while True:
             elif back_book not in rented_books_list:
                 print("sorry we dont rent that book!")
                 break
-
 
     elif actione == "rent":
         print("Do you wanna search book by special character? Press: 1")
@@ -53,15 +54,36 @@ while True:
             elif threeaction == "2":
                 position_rented_book = input("Write me a full name of chosen book :")
                 rented_books_list.append(position_rented_book)
+                
                 if position_rented_book not in book_list:
                     print("sorry we dont have that book, maybe you write something wrong.")
                     break
                 position = book_list.index(position_rented_book)
                 del book_list[position]
                 break
+                
+    elif actione == "throw away":
+        del_book = input("book to throw away :")
+        sure = input("are you sure? :")
+        
+        if sure == "yes":
+            print("okei i throw it away!")
+            book_list.remove(del_book)
+            break
+        else:
+            print("we dont have that book!")
 
-    elif actione == "1":
-        print(rented_books_list)
+    elif actione == "rented books":
+        print("all now rented books ", number_rented_books, rented_books_list)
 
-    elif actione != "rent" or "back" or "add" or "1":
+    elif actione == "check":
+        print("all book in library ", number_of_books, book_list)
+
+    elif actione == "nice":
+        print("NICE!!!!")
+
+    elif actione == "end":
+        quit()
+
+    else:
         print("please repeat")
